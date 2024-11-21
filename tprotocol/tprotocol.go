@@ -23,8 +23,9 @@ const (
 )
 
 type serializedProtocol struct {
-	type_ byte  // constants in the Thrift protocol
-	id    int16 // field num in Thrift protocol defined
+	type_ byte   // constants in the Thrift protocol
+	id    int16  // field num in Thrift protocol defined
+	name  string // field name
 
 	value any // value storage
 	/*
@@ -36,9 +37,8 @@ type serializedProtocol struct {
 		type_ = I32, value type of int32
 		type_ = I64, value type of int64
 		type_ = STRING, UTF7, UTF8, UTF16 value type of golang string
-		type_ = STRUCT, value type of []serializedProtocol
-
-		type_ = VOID, value is nil
-		type_ = VOID, value is nil
+		type_ = STRUCT，MAP, value type of []serializedProtocol
+		type_ = SET, LIST type of []any
+		type_ = FLOAT type of float32
 	*/
 }
